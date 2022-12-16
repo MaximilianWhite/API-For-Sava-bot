@@ -37,6 +37,12 @@ def StartGetParse(request):
     try:
         base_dir_html_render = 'renderHTML'
         move_dir_html_renderer = 'rendererHTML'
+        if(not(os.path.isdir(base_dir_html_render))):
+            os.mkdir(base_dir_html_render)
+        
+        if(not(os.path.isdir(move_dir_html_renderer))):
+            os.mkdir(move_dir_html_renderer)
+
         list_html = os.listdir(base_dir_html_render)
         # print(os.listdir(base_dir_html_render))
         for i in list_html:
